@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>scorebox - Football Predict Game</title>
+  <link rel="icon" type="image/x-icon" href="static img/BG_FAV_BRAND_WIHTE.png">
+  <!-- SEO -->
+
+  <!-- External Link -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style-tab.css">
+  <link rel="stylesheet" href="css/style-tab2.css">
+  <link rel="stylesheet" href="css/style-mob.css">
+  <link rel="stylesheet" href="css/style-ano.css">
+  <script src="css/general.js"></script>
+  <!--Bootstrap CSS & JS-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <!-- FontAwesome & Bootstrap icon -->
+  <script src="https://kit.fontawesome.com/ad2de9e858.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <!-- Google Font-Family -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <!-- Jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <!--Date-picker-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+</head>
+
+<body>
+  <div class="wall">
+      <!-- Navbar -->
+      <div class="navbar-container sticky">
+        <div class="navbar-content wrapper">
+          <div class="navbar-logo">
+            <a href="index.html">
+              <img src="static img/NBG_LOGO_BLACK.png" alt="scorebox Logo">
+            </a>
+          </div>
+          <div class="navbar-search" width="279px">
+            <form display="flex" class="sc-fqkvVR sc-dcJsrY kjmESb hNspbb"><svg width="24" height="24" viewBox="0 0 24 24"
+                fill="var(--on-surface-nLv1)" class="sc-dCFHLb kcMQmH" style="flex-shrink: 0;">
+                <path fill="var(--on-surface-nLv1)"
+                  d="M15.7 13.58h-1.38a6.964 6.964 0 0 0 1.7-4.57C16.02 5.14 12.88 2 9.01 2 5.14 2 2 5.14 2 9.01c0 3.87 3.14 7.01 7.01 7.01 1.75 0 3.34-.64 4.57-1.7v1.38l6.3 6.3L22 19.88l-6.3-6.3zm-6.69.44C6.25 14.02 4 11.77 4 9.01S6.25 4 9.01 4s5.01 2.25 5.01 5.01-2.25 5.01-5.01 5.01z"
+                  fill-rule="evenodd" mx="lg" my="sm" style="flex-shrink: 0;"></path>
+              </svg><input placeholder="Search" class="sc-226b3488-0 feuYEM" value=""></form>
+          </div>
+          <div class="navbar-menu">
+            <ul>
+              <li><a href="">LiveScores</a></li>
+              <li><a href="">Community<i class="badge_fill">Hot</i></a></li>
+              <li><a href="">News</a></li>
+              <li><a href="login.html"><span>Sign in</span></a></li>
+            </ul>
+          </div>
+          <div class="navbar-hamburger">
+            <i class="fa-solid fa-bars hambur-icon1"></i>
+            <i class="fa-solid fa-x hambur-icon2 d-none"></i>
+          </div>
+          <div class="navbar-hamburger-menu">
+            <div class="menu__inner o-scrollbar">
+              <div class="search-competitions p-0 bg-grey-4">
+                <div class="search-competitions__form">
+                  <input type="text" placeholder="Search Country" id="search-input" value="">
+                  <i class="icon-search bi bi-search" style="display:;"></i>
+                  <i class="icon-close bi bi-x" style="display:none"></i>
+                </div>
+                <!---->
+                <div class="no-search-results-found">
+                  <!--add "active" to the class to display No-Search-Results-Found...-->
+                  <!---->
+                  <div class="no-search-results-found__message">
+                    <p>
+                      No results found
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Adsvertise-->
+      <div class="ads-box">
+        <img src="static img/Ad 728px - 90px.png" alt="" width="728px">
+      </div>
+      <!-- Content -->
+      <div class="main-content wrapper">
+
+        <!-- Left Side Bar -->
+        <div class="leftbar">
+          <div class="box-content">
+            <p>Pick a League</p>
+            <div class="leagues-main-wrapper2">
+              
+              
+              
+              <div class="leagues-name2">
+                <a href="" class="cursor-pointer">
+                  <div display="flex" class="leagues-country-t">
+                    <img src="img/Leagues_logo/England-Premier-League.png" alt="Premier League" width="24" height="24" style="margin-left: 8px;">
+                    <div><span>Premier League</span></div>
+                  </div>
+                </a>
+              </div>
+              <div class="leagues-name2">
+                <a href="" class="cursor-pointer">
+                  <div display="flex" class="leagues-country-t">
+                    <img src="img/Leagues_logo/Spain-Laliga.png" alt="LaLiga" width="24" height="24" style="margin-left: 8px;">
+                    <div><span>LaLiga</span></div>
+                  </div>
+                </a>
+              </div>
+              <div class="leagues-name2">
+                <a href="" class="cursor-pointer">
+                  <div display="flex" class="leagues-country-t">
+                    <img src="img/Leagues_logo/Italy-SerieA.png" alt="Serie-A" width="24" height="24" style="margin-left: 8px;">
+                    <div><span>Serie A</span></div>
+                  </div>
+                </a>
+              </div>
+              <div class="leagues-name2">
+                <a href="" class="cursor-pointer">
+                  <div display="flex" class="leagues-country-t">
+                    <img src="img/Leagues_logo/Germany-Bundesliga.png" alt="Bundesliga" width="24" height="24" style="margin-left: 8px;">
+                    <div><span>Bundesliga</span></div>
+                  </div>
+                </a>
+              </div>
+              <div class="leagues-name2">
+                <a href="" class="cursor-pointer">
+                  <div display="flex" class="leagues-country-t">
+                    <img src="img/Leagues_logo/France-Ligue1.png" alt="Ligue1" width="24" height="24" style="margin-left: 8px;">
+                    <div><span>Ligue 1</span></div>
+                  </div>
+                </a>
+              </div>
+            <div class="leagues-name2">
+                <a href="" class="cursor-pointer">
+                  <div display="flex" class="leagues-country-t">
+                    <img src="img/Leagues_logo/V-league.png" alt="Ligue1" width="24" height="24" style="margin-left: 8px;">
+                    <div><span>V.League</span></div>
+                  </div>
+                </a>
+              </div></div>
+          </div>
+
+          <!--Top 10 EPL-->
+          <div class="box-content">
+            <p>Top 10 EPL</p>
+            <table style="width:100%">
+              <tbody>
+                <tr>
+                  <th style="width:5%">No.</th>
+                  <th style="width:5%">User</th>
+                  <th style="width:30%">Points</th>
+                </tr>
+                <tr>
+                  <td class="table-top4">1</td>
+                  <td class="table-logo"><a href=""> ABCD name</a></td>
+                  <td class="table-team"><a href=""> 100</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!--Top 10 ITA-->
+          <div class="box-content">
+            <p>Top 10 EPL</p>
+            <table style="width:100%">
+              <tbody>
+                <tr>
+                  <th style="width:5%">No.</th>
+                  <th style="width:5%">User</th>
+                  <th style="width:30%">Points</th>
+                </tr>
+                <tr>
+                  <td class="table-top4">1</td>
+                  <td class="table-logo"><a href=""> ABCD name</a></td>
+                  <td class="table-team"><a href=""> 100</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Mid Side Bar -->
+        <div class="mainbar">
+          <div id="display-today-matches">
+            <div class="box-content">
+              <div class="filter-bar">
+                <div class="button-filter-content">
+                  <button class="btn-filter-content active">ALL</button>
+                  <button class="btn-filter-content">NOT STARTED<span class="btn__label bg-danger"
+                      id="livescore-number">2</span></button>
+                  <button class="btn-filter-content">FAVORITES</button>
+                </div>
+              </div>
+              <div class="leagues-wrapper">
+
+                <div class="leagues-wrapper-header">
+                  <div class="leagues-wrapper-header-l">
+                    <div class="leagues-wrapper-header-l-l flex-combo">
+                      <a href="" class="pd-0">
+                        <img src="img/Leagues_logo/England-Premier-League.png" alt="England Premier League">
+                      </a>
+                    </div>
+                    <div class="leagues-wrapper-header-l-r">
+                      <div class="leagues-wrapper-header-l-r-t"><a href="" class="pd-0">England</a></div>
+                      <div class="leagues-wrapper-header-l-r-b"><a href="" class="pd-0">Premier League</a></div>
+                    </div>
+                  </div>
+                  <div class="leagues-wrapper-header-r flex-combo">
+                    <span>Display matches: 2</span>
+                    <i class="fa-solid fa-chevron-down fa-bounce"></i>
+                    <i class="fa-solid fa-chevron-up fa-bounce d-none"></i>
+                  </div>
+                </div>
+                <div class="leagues-wrapper-content d-flex a-item">
+                  <div class="teams-wrapper flex-basic">
+                    <div class="team-wrapper flex-basic">
+                      <div class="teams-fav">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                      <div class="teams-stats flex-combo">
+                        <span class="teams-start-time">17-Apr-23</span>
+                        <span class="teams-status live">FT</span>
+                      </div>
+                    </div>
+                    <div class="teams-link flex-basic">
+                      <a href="">
+                        <div class="teams-home d-flex">
+                          <div class="teams-logo"><img src="img/Teams_logo/Liverpool-logo.png" alt=""></div>
+                          <div class="teams-name">Liverpool</div>
+                        </div>
+                        <div class="teams-away d-flex">
+                          <div class="teams-logo"><img src="img/Teams_logo/Chelsea-logo.png" alt=""></div>
+                          <div class="teams-name">Chelsea</div>
+                        </div>
+
+                      </a>
+
+                    </div>
+                    <div class="teams-info">
+                      Play Now<i class="fa-solid fa-chevron-right fa-flip"></i>
+                    </div>
+
+
+                  </div>
+                  <div class="teams-wrapper flex-basic">
+                    <div class="team-wrapper flex-basic">
+                      <div class="teams-fav">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                      <div class="teams-stats flex-combo">
+                        <span class="teams-start-time">17-Apr-23</span>
+                        <span class="teams-status live">FT</span>
+                      </div>
+                    </div>
+                    <div class="teams-link flex-basic">
+                      <a href="">
+                        <div class="teams-home d-flex">
+                          <div class="teams-logo"><img src="img/Teams_logo/Liverpool-logo.png" alt=""></div>
+                          <div class="teams-name">Liverpool</div>
+                        </div>
+                        <div class="teams-away d-flex">
+                          <div class="teams-logo"><img src="img/Teams_logo/Chelsea-logo.png" alt=""></div>
+                          <div class="teams-name">Chelsea</div>
+                        </div>
+
+                      </a>
+
+                    </div>
+                    <div class="teams-info">
+                      Play Now<i class="fa-solid fa-chevron-right fa-flip"></i>
+                    </div>
+
+
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="leagues-wrapper">
+
+                <div class="leagues-wrapper-header">
+                  <div class="leagues-wrapper-header-l">
+                    <div class="leagues-wrapper-header-l-l flex-combo">
+                      <a href="" class="pd-0">
+                        <img src="img/Leagues_logo/England-Premier-League.png" alt="England Premier League">
+                      </a>
+                    </div>
+                    <div class="leagues-wrapper-header-l-r">
+                      <div class="leagues-wrapper-header-l-r-t"><a href="" class="pd-0">England</a></div>
+                      <div class="leagues-wrapper-header-l-r-b"><a href="" class="pd-0">Premier League</a></div>
+                    </div>
+                  </div>
+                  <div class="leagues-wrapper-header-r flex-combo">
+                    <span>Display matches: 2</span>
+                    <i class="fa-solid fa-chevron-down fa-bounce"></i>
+                    <i class="fa-solid fa-chevron-up fa-bounce d-none"></i>
+                  </div>
+                </div>
+                <div class="leagues-wrapper-content d-flex a-item">
+                  <div class="teams-wrapper flex-basic">
+                    <div class="team-wrapper flex-basic">
+                      <div class="teams-fav">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                      <div class="teams-stats flex-combo">
+                        <span class="teams-start-time">17-Apr-23</span>
+                        <span class="teams-status live">FT</span>
+                      </div>
+                    </div>
+                    <div class="teams-link flex-basic">
+                      <a href="">
+                        <div class="teams-home d-flex">
+                          <div class="teams-logo"><img src="img/Teams_logo/Liverpool-logo.png" alt=""></div>
+                          <div class="teams-name">Liverpool</div>
+                        </div>
+                        <div class="teams-away d-flex">
+                          <div class="teams-logo"><img src="img/Teams_logo/Chelsea-logo.png" alt=""></div>
+                          <div class="teams-name">Chelsea</div>
+                        </div>
+
+                      </a>
+
+                    </div>
+                    <div class="teams-info">
+                      Play Now<i class="fa-solid fa-chevron-right fa-flip"></i>
+                    </div>
+
+
+                  </div>
+                  <div class="teams-wrapper flex-basic">
+                    <div class="team-wrapper flex-basic">
+                      <div class="teams-fav">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                      <div class="teams-stats flex-combo">
+                        <span class="teams-start-time">17-Apr-23</span>
+                        <span class="teams-status live">FT</span>
+                      </div>
+                    </div>
+                    <div class="teams-link flex-basic">
+                      <a href="">
+                        <div class="teams-home d-flex">
+                          <div class="teams-logo"><img src="img/Teams_logo/Liverpool-logo.png" alt=""></div>
+                          <div class="teams-name">Liverpool</div>
+                        </div>
+                        <div class="teams-away d-flex">
+                          <div class="teams-logo"><img src="img/Teams_logo/Chelsea-logo.png" alt=""></div>
+                          <div class="teams-name">Chelsea</div>
+                        </div>
+
+                      </a>
+
+                    </div>
+                    <div class="teams-info">
+                      Play Now<i class="fa-solid fa-chevron-right fa-flip"></i>
+                    </div>
+
+
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="leagues-wrapper">
+
+                <div class="leagues-wrapper-header">
+                  <div class="leagues-wrapper-header-l">
+                    <div class="leagues-wrapper-header-l-l flex-combo">
+                      <a href="" class="pd-0">
+                        <img src="img/Leagues_logo/England-Premier-League.png" alt="England Premier League">
+                      </a>
+                    </div>
+                    <div class="leagues-wrapper-header-l-r">
+                      <div class="leagues-wrapper-header-l-r-t"><a href="" class="pd-0">England</a></div>
+                      <div class="leagues-wrapper-header-l-r-b"><a href="" class="pd-0">Premier League</a></div>
+                    </div>
+                  </div>
+                  <div class="leagues-wrapper-header-r flex-combo">
+                    <span>Display matches: 2</span>
+                    <i class="fa-solid fa-chevron-down fa-bounce"></i>
+                    <i class="fa-solid fa-chevron-up fa-bounce d-none"></i>
+                  </div>
+                </div>
+                <div class="leagues-wrapper-content d-flex a-item">
+                  <div class="teams-wrapper flex-basic">
+                    <div class="team-wrapper flex-basic">
+                      <div class="teams-fav">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                      <div class="teams-stats flex-combo">
+                        <span class="teams-start-time">17-Apr-23</span>
+                        <span class="teams-status live">FT</span>
+                      </div>
+                    </div>
+                    <div class="teams-link flex-basic">
+                      <a href="">
+                        <div class="teams-home d-flex">
+                          <div class="teams-logo"><img src="img/Teams_logo/Liverpool-logo.png" alt=""></div>
+                          <div class="teams-name">Liverpool</div>
+                        </div>
+                        <div class="teams-away d-flex">
+                          <div class="teams-logo"><img src="img/Teams_logo/Chelsea-logo.png" alt=""></div>
+                          <div class="teams-name">Chelsea</div>
+                        </div>
+
+                      </a>
+
+                    </div>
+                    <div class="teams-info">
+                      Play Now<i class="fa-solid fa-chevron-right fa-flip"></i>
+                    </div>
+
+
+                  </div>
+                  <div class="teams-wrapper flex-basic">
+                    <div class="team-wrapper flex-basic">
+                      <div class="teams-fav">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                      <div class="teams-stats flex-combo">
+                        <span class="teams-start-time">17-Apr-23</span>
+                        <span class="teams-status live">FT</span>
+                      </div>
+                    </div>
+                    <div class="teams-link flex-basic">
+                      <a href="">
+                        <div class="teams-home d-flex">
+                          <div class="teams-logo"><img src="img/Teams_logo/Liverpool-logo.png" alt=""></div>
+                          <div class="teams-name">Liverpool</div>
+                        </div>
+                        <div class="teams-away d-flex">
+                          <div class="teams-logo"><img src="img/Teams_logo/Chelsea-logo.png" alt=""></div>
+                          <div class="teams-name">Chelsea</div>
+                        </div>
+
+                      </a>
+
+                    </div>
+                    <div class="teams-info">
+                      Play Now<i class="fa-solid fa-chevron-right fa-flip"></i>
+                    </div>
+
+
+                  </div>
+                </div>
+
+              </div>
+
+              <!--Show More Button-->
+              <div class="title-general-view-more flex-combo">
+                <div class="title-general-view-more-in" data="1" id="loading_more">
+                  Show All Matches <i class="fa-solid fa-chevron-down fa-bounce"></i>
+                </div>
+                <div class="title-general-view-more-in d-none" data="1" id="spinner_loading_more">
+                </div>
+                <div class="spinner-3" id="spinner_3_animation"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side Bar -->
+        <div class="rightbar">
+          <!--Featured match-->
+          <div class="box-content-2">
+            <p>Featured Matches (3)</p>
+            <div class="box-color">
+              <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="10000">
+                    <div class="who-will-win-match t-center">
+                      <div class="who-will-win-match__breadcrumbs"><a href="" class=""> Football </a> / <a href=""
+                          class="">
+                          World Cup </a>
+                      </div>
+                      <a href="head2head.html" class="who-will-win-match__match d-flex align-center">
+                        <div class="who-will-win-match__match__team">
+                          <div class="ww-adjust">
+                            <img alt="Argentina" width="40" height="40" src="img/Country_flags/argentina-flag.png">
+                            <span class="who-will-win-match__match__name"> Argentina </span>
+                          </div>
+                        </div>
+                        <small class="who-will-win-match__match__date">
+                          <span class="span-ko-time"> 02:00 </span> 14 Dec.2022
+                        </small>
+                        <div class="who-will-win-match__match__team">
+                          <div class="ww-adjust">
+                            <img alt="Argentina" width="40" height="40" src="img/Country_flags/croatia-flag.png">
+                            <span class="who-will-win-match__match__name"> Croatia </span>
+                          </div>
+                        </div>
+                      </a>
+
+                    </div>
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <div class="who-will-win-match t-center">
+                      <div class="who-will-win-match__breadcrumbs"><a href="" class=""> Football </a> / <a href=""
+                          class="">
+                          World Cup </a>
+                      </div>
+                      <a href="head2head.html" class="who-will-win-match__match d-flex align-center">
+                        <div class="who-will-win-match__match__team">
+                          <div class="ww-adjust">
+                            <img alt="Argentina" width="40" height="40" src="img/Country_flags/argentina-flag.png">
+                            <span class="who-will-win-match__match__name"> Argentina </span>
+                          </div>
+                        </div>
+                        <small class="who-will-win-match__match__date">
+                          <span class="span-ko-time"> 02:00 </span> 14 Dec.2022
+                        </small>
+                        <div class="who-will-win-match__match__team">
+                          <div class="ww-adjust">
+                            <img alt="Argentina" width="40" height="40" src="img/Country_flags/croatia-flag.png">
+                            <span class="who-will-win-match__match__name"> Croatia </span>
+                          </div>
+                        </div>
+                      </a>
+
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="who-will-win-match t-center">
+                      <div class="who-will-win-match__breadcrumbs"><a href="" class=""> Football </a> / <a href=""
+                          class="">
+                          World Cup </a>
+                      </div>
+                      <a href="head2head.html" class="who-will-win-match__match d-flex align-center">
+                        <div class="who-will-win-match__match__team">
+                          <div class="ww-adjust">
+                            <img alt="Argentina" width="40" height="40" src="img/Country_flags/argentina-flag.png">
+                            <span class="who-will-win-match__match__name"> Argentina </span>
+                          </div>
+                        </div>
+                        <small class="who-will-win-match__match__date">
+                          <span class="span-ko-time"> 02:00 </span> 14 Dec.2022
+                        </small>
+                        <div class="who-will-win-match__match__team">
+                          <div class="ww-adjust">
+                            <img alt="Argentina" width="40" height="40" src="img/Country_flags/croatia-flag.png">
+                            <span class="who-will-win-match__match__name"> Croatia </span>
+                          </div>
+                        </div>
+                      </a>
+
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                  data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                  data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!--News-->
+          <div class="box-content-2">
+            <p>Related News</p>
+            <div id="carouselExampleDark2" class="carousel carousel-dark slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="0" class="active"
+                  aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="1"
+                  aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="2"
+                  aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="3"
+                  aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="4"
+                  aria-label="Slide 5"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                  <article>
+                    <a class="article-wrapper" href="">
+                      <div class="article-content-wrapper flex-combo">
+                        <img src="img/News/News1.png" alt="News1" loading="lazy" width="300px">
+                      </div>
+                      <div class="article-content-wrapper">
+                        <h3 class="article-title">
+                          Son Heung-min hopes Tottenham’s family feeling can galvanise Richarlison
+                        </h3>
+                        <span class="article-source">
+                          <div class="article-source-origin">90 Min</div>
+                          <div class="article-source-time">6 Hours before</div>
+                        </span>
+                      </div>
+                    </a>
+                  </article>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                  <article>
+                    <a class="article-wrapper" href="">
+                      <div class="article-content-wrapper flex-combo">
+                        <img src="img/News/News2.png" alt="News2" loading="lazy" width="300px">
+                      </div>
+                      <div class="article-content-wrapper">
+                        <h3 class="article-title">
+                          Joselu keeps Real Madrid perfect with winning goal against Real Sociedad
+                        </h3>
+                        <span class="article-source">
+                          <div class="article-source-origin">Sola News</div>
+                          <div class="article-source-time">6 Hours before</div>
+                        </span>
+                      </div>
+                    </a>
+                  </article>
+                </div>
+                <div class="carousel-item">
+                  <article>
+                    <a class="article-wrapper" href="">
+                      <div class="article-content-wrapper flex-combo">
+                        <img src="img/News/News3.png" alt="News3" loading="lazy" width="300px">
+                      </div>
+                      <div class="article-content-wrapper">
+                        <h3 class="article-title">
+                          Jude Bellingham and language lessons help Jamie Bynoe-Gittens settle at Dortmund
+                        </h3>
+                        <span class="article-source">
+                          <div class="article-source-origin">Sola News</div>
+                          <div class="article-source-time">6 Hours before</div>
+                        </span>
+                      </div>
+                    </a>
+                  </article>
+                </div>
+                <div class="carousel-item">
+                  <article>
+                    <a class="article-wrapper" href="">
+                      <div class="article-content-wrapper flex-combo">
+                        <img src="img/News/News4.png" alt="News4" loading="lazy" width="300px">
+                      </div>
+                      <div class="article-content-wrapper">
+                        <h3 class="article-title">
+                          Getafe boss admits mistake over Mason Greenwood & Jude Bellingham comments
+                        </h3>
+                        <span class="article-source">
+                          <div class="article-source-origin">Sola News</div>
+                          <div class="article-source-time">6 Hours before</div>
+                        </span>
+                      </div>
+                    </a>
+                  </article>
+                </div>
+                <div class="carousel-item">
+                  <article>
+                    <a class="article-wrapper" href="">
+                      <div class="article-content-wrapper flex-combo">
+                        <img src="img/News/News5.png" alt="News5" loading="lazy" width="300px">
+                      </div>
+                      <div class="article-content-wrapper">
+                        <h3 class="article-title">
+                          Mikel Arteta makes major admission about Arsenal goalkeeper situation
+                        </h3>
+                        <span class="article-source">
+                          <div class="article-source-origin">Sola News</div>
+                          <div class="article-source-time">6 Hours before</div>
+                        </span>
+                      </div>
+                    </a>
+                  </article>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark2"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark2"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+            <div class="title-general-view-more flex-combo mt-3">
+              <button type="button" class="btn btn-outline-primary btn-sm btn-sola">Read More</button>
+            </div>
+          </div>
+          <!--Standing Widgets-->
+          <div class="box-content-3">
+            <div class="box-color">
+              <iframe frameborder="0" scrolling="yes" height="760" id="fs-69002" src="https://www.fastscore.com/widgets/standings/27581/69002?ff=3&amp;fs=14&amp;lh=26&amp;bg=F5F5F9&amp;fc=212529&amp;tfc=7B61FF&amp;ifc=D2C9FF&amp;lbc=DEE2E6&amp;sbr=false&amp;sci=true&amp;sha=true&amp;stl=false&amp;slc=true&amp;tlg=true&amp;tlk=false&amp;mp=true&amp;mw=false&amp;md=false&amp;ml=false&amp;gl=false&amp;gd=true&amp;f=false" style="width: 100%;height: 814px;"></iframe>
+            </div>
+          </div>
+          
+          <!--Ads Right Bar-->
+          <div class="ads-rightbar flex-combo">
+            <img src="static img/Ad 250px - 250px.png" alt="Adsvertise" width="250px">
+          </div>
+
+        </div>
+      </div>
+
+      <!--footer-->
+      <div class="footer-wrapper-2">
+        <div class="wrapper">
+          <div class="footer2">
+            <p>This website includes
+            </p>
+            <div class="adversmore">Advertising</div>
+            <p></p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-wrapper-1">
+        <div class="wrapper">
+          <div class="footer1">
+            <div class="about ft1">
+              <h3>About</h3>
+              <p>scorebox presents football statistics, live-score, match previews and detailed analysis for
+                more than 1000+ football leagues.</p>
+              <div class="visit">
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-twitter"></i></a>
+                <img src="static img/NBG_LOGO_WHITE.png" alt="" width="150px">
+              </div>
+            </div>
+            <div class="what-is-4llowbet ft1">
+              <h3>What is scorebox</h3>
+              <a href="">WHAT IS scorebox ?</a>
+              <a href="">FAQ?</a>
+              <a href="">Terms of use</a>
+              <a href="">Privacy Policy</a>
+              <a href="">Avoid scam</a>
+              <a href="">Contact us</a>
+            </div>
+            <div class="quick-links ft1">
+              <h3>Featured match for today</h3>
+              <a href="">Manchester United -vs- Chelsea</a>
+              <a href="">Manchester City -vs- Liverpool</a>
+              <a href="">Arsenal -vs- Brighton</a>
+            </div>
+            <div class="another ft1">
+              <h3>Featured match for tomorrow</h3>
+              <a href="">Real Madrid -vs- FC Barcelona</a>
+              <a href="">Juventus -vs- Napoli</a>
+              <a href="">AS Roma -vs- Schalke</a>
+              <!---->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-wrapper-4">
+        <div class="wrapper">
+          <div class="footer4">
+            <p>Copyright © 2022-2023 <b>scorebox.com</b> All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+      <!--footer-->
+
+
+
+      <!--on top button-->
+      <button onclick="topFunction()" id="myBtn" title="Go to top" style="display: none;">
+        <i class="fa-solid fa-chevron-up fa-bounce"></i>
+      </button>
+      <!--on top button-->
+
+  </div>
+    
+
+
+  <!--Script to toggle the button on Top-->
+  <script>
+    let mybutton = document.getElementById("myBtn");
+    window.onscroll = function () { scrollFunction() };
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <!--Script to toggle the mobile navbar hamburger button-->
+  <script>
+    $(document).ready(function () {
+      $('.navbar-hamburger').click(function () {
+        $(".navbar-hamburger").toggleClass("active");
+        $(".navbar-hamburger-menu").toggleClass("active");
+        $(".hambur-icon1").toggleClass("d-none");
+        $(".hambur-icon2").toggleClass("d-none");
+        $("body").toggleClass("no-scroll");
+      });
+    });
+  </script>
+  <!--Script to toggle left side bar Leagues Country-->
+  <script>
+    $(document).ready(function () {
+      $(".leagues-country").click(function () {
+        $(this).toggleClass("active");
+        $(this).next().toggle();
+      });
+    });
+  </script>
+  <!--Script to toggle show/hide the tittle of the leagues content-->
+  <script>
+    $(document).ready(function () {
+      $(".leagues-wrapper-header").click(function () {
+        $(this).parent().toggleClass("close");
+      });
+    });
+  </script>
+  <!--Script to show loading more animation-->
+  <script>
+    $(document).ready(function () {
+
+      $('.title-general-view-more-in').click(function () {
+        $('.title-general-view-more-in').addClass("none");
+        $('.spinner-3').addClass("active");
+
+        setTimeout(function () {
+          $('#display_today_matches').append($("<div>This a append Content :D</div>"));
+        }, 1000);
+
+        setTimeout(function () {
+          $('.spinner-3').removeClass("active");
+          $('.title-general-view-more').addClass("none")
+        }, 1000);
+
+      });
+    }
+    );
+  </script>
+
+  <!--Script zoom body to 90%-->
+  <script>document.body.style.zoom = "95%"</script>
+
+  <!--Script search League Country left bar-->
+  <script>
+    $(document).ready(function () {
+      $("#filter").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $(".leagues-main-wrapper").filter(function () {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+  </script>
+
+  <!--Script date-picker-->
+  <script>
+    $(function () {
+      $("#datepicker").datepicker({
+        format: "dd-mm-yyyy",
+        toggleActive: true,
+        autoclose: true,
+        todayHighlight: true,
+        todayBtn: "linked",
+      }).datepicker('update', new Date());
+    });
+  </script>
+  
+  <!--Script Favorites Button-->
+  <script>
+    $(document).ready(function () {
+        $(".teams-fav").click(function () {
+            $(this).toggleClass("active");
+        });
+    });
+  </script>
+</body>
+
+</html>
